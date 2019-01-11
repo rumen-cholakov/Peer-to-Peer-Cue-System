@@ -127,12 +127,15 @@
                         port: 413,
                         debug: 3
                     });
-
+                    console.log(peer);
+                    
                     peer.on('open', function (id) {
                         peerId = id;
                         console.log('ID: ' + id);
                     });
                     peer.on('error', function (err) {
+                        console.log(error);
+                        
                         if (err.type === 'unavailable-id') {
                             alert('' + err);
                             peer.reconnect();
